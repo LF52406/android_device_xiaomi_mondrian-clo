@@ -1,0 +1,19 @@
+# Device-specific init script for POCO F5 Pro (mondrian)
+
+on early-init
+    # Set up performance and display profiles early
+    write /sys/class/drm/card0-DSI-1/disp_param 1
+
+on boot
+    # Permissions for display nodes (Refresh rate logic)
+    chown system system /sys/class/drm/card0-DSI-1/dynamic_fps
+    chmod 0664 /sys/class/drm/card0-DSI-1/dynamic_fps
+
+on post-fs-data
+    # Create directories for specific hardware daemons
+    mkdir /data/vendor/thermal 0771 root system
+    mkdir /data/vendor/audio 0770 audio audio
+
+on property:sys.boot_completed=1
+    # Trigger final kernel optimizations after UI starts
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
