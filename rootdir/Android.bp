@@ -1,0 +1,17 @@
+// rootdir/Android.bp
+
+// Compile and copy the partition table (fstab)
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    vendor: true,
+    ramdisk_available: true,
+}
+
+// Compile and copy the device-specific init script
+prebuilt_etc {
+    name: "init.mondrian.rc",
+    src: "etc/init.mondrian.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
