@@ -1,8 +1,11 @@
-# Product definitions for mondrian
+# Copyright (C) 2026 Paranoid Android
+# Product definitions for POCO F5 Pro (mondrian)
+
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/mondrian.mk
 
+# AOSPA standard lunch choices
 COMMON_LUNCH_CHOICES := \
-    mondrian-user \
-    mondrian-userdebug \
-    mondrian-eng
+    aospa_mondrian-user \
+    aospa_mondrian-userdebug \
+    aospa_mondrian-eng
