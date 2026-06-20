@@ -1,0 +1,8 @@
+// Base soong namespace for mondrian
+soong_namespace {
+    imports: [
+        "hardware/qcom/bootctrl",
+        "hardware/qcom/display",
+        "hardware/qcom/media",
+    ],
+}
