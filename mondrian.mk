@@ -17,3 +17,8 @@ PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := strict
 
 # Include system properties
 TARGET_SYSTEM_PROP += $(LOCAL_DIR)/system.prop
+
+# Rootdir / Init files
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.mondrian.rc
